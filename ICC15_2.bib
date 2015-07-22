@@ -1,0 +1,259 @@
+ 
+Bibtex (bib) file for the thesis style document.
+
+% last modified on 09/01/09 Fengzhong Qu
+the key to a bib entry is generated according to the following rules
+ 1. Four letters plus 2 digits
+ 2. The 2 digits are for the publication year.
+ 3. The four letters come from the name(s) of author(s):
+    . if there is only one author - the first four letters of last name
+        If the last name is less than 4 letters, use first name.
+        for example, Gia, John -> GiaJ
+    . if there are two authors - two from each author's last name
+        example "First Author and Second A. Uthor" ->AuUt
+    . if there are three authors - two from the first's last name,
+        and one from others' last
+    . if there are four authors - one from each's last name
+    . if there are more than four authors, use only the first four.
+    . if two papers have the same key, please use a, b to distinguish them
+Example: "Jack London and John Bull" in 1995 -> LoBu95
+
+@string{COM="IEEE Trans. on Communications"}
+@string{SP="IEEE Trans. on Signal Processing"}
+@string{IT="IEEE Trans. on Information Theory"}
+@string{COML="IEEE Communications Letters"}
+@string{SPL="IEEE Signal Processing Letters"}
+@string{VT="IEEE Trans. on Vehicular Tech."}
+@string{BC="IEEE Trans. on Broadcasting"}
+@string{WCOM="IEEE Trans. on Wireless Communications"}
+@string{COMMAG="IEEE Communications Magazine"}
+@string{SPMAG="IEEE Signal Processing Magazine"}
+@string{JSAC="IEEE Journal on Selected Areas in Communications"}
+@string{PROCIEEE="Proc. of the IEEE"}
+@string{IEICE="IEICE Trans. on Communications"}
+@string{JVCIR="Journal of Visual Communication and Image Representation"}
+@string{Network="IEEE Network"}
+@string{TCSVT="IEEE Trans. on Circuits and Systems for Video Technology"}
+@string{PIEEE="Proceedings of the IEEE"}
+@string{IP="IEEE Trans. on Image Processing}
+@string{SPIC="Signal Processing: Image Communication"}
+@string{WPC="Wireless Personal Communications"}
+@string{TMC="IEEE Trans. on Mobile Computing"}
+@string{CC="Computer Communications"}
+@string{JSTSP="IEEE Journal of Selected Topics in Signal Processing"}
+@string{WC="IEEE Wireless Communciations"}
+
+
+@string{ICC="Proc. of IEEE Intl. Conf. on Communications"}
+@string{ISIT="Proc. of IEEE Intl. Symp. on Information Theory"}
+@string{GLOBECOM="Proc. of IEEE Global Telecommunications Conf."}
+@string{VTC="Proc. of IEEE Vehicular Technology Conf."}
+@string{ICASSP="Proc. of IEEE Intl. Conf. on Acoustics, Speech, and Signal Processing"}
+@String{MILCOM = "Proc. of MILCOM Conf."}
+@String{WCNC = "Proc. of IEEE Wireless Communications and Networking Conf."}
+@String{WCN = "Proc. of Intl. Conf. on Mobile Computing and Networking."}
+@String{ISCAS = "Proc. of IEEE Intl. Symp. on Circuits and Systems"}
+@String{ICME = "Proc. of IEEE Intl. Conf. on Multimedia and Expo"}
+
+
+
+@string{jan="January"}
+@string{feb="February"}
+@string{mar="March"}
+@string{apr="April"}
+@string{may="May"}
+@string{jun="June"}
+@string{jul="July"}
+@string{aug="August"}
+@string{sep="September"}
+@string{oct="October"}
+@string{nov="November"}
+@string{dec="December"}
+   
+@book{Hwan09,
+	author = "Jenq-Neng Hwang",
+	title = "Multimedia Networking: From Theory to Practice",
+	publisher = "Cambridge University Press", 
+	year = 2009}
+	
+@book{Perk06,
+	author = "Colin Perkins",
+	title = "{RTP} Audio and Video for the Internet",
+	publisher = "Addison-Wesley", 
+	year = 2006}
+	
+
+	 
+@article{AdKF11,
+  author = "Velibor Adzic and Hari Kalva and Borko Furht",
+  title = "A Survey of Multimedia Content Adaptation for Mobile Devices",
+  journal = "Multimedia Tools and Applications",
+  volume = 51,
+  number = 1,
+  year = 2011,
+  pages = "379--396"}
+
+
+@article{AiAA13,
+	author = "Adnan Aijaz and Hamid Aghvami and Mojdeh Amani",
+	title = "A Survey on Mobile Data Offloading: Technical and Business Perspectives",
+	journal = WC,
+	volume = 20,
+	number = 2,
+	year = 2013,
+	pages = "104--112"}
+	
+@article{BSCS13,
+	author = "Mehdi Bennis and Meryem Simsek and Andreas Czylwik and Walid Saad and Stefan Valentin and Merouane Debbah",
+	title = "When Cellular Meets {WiFi} in Wireless Small Cell Networks",
+	journal = COMMAG,
+	volume = 51,
+	number = 6,
+	year = 2013,
+	pages = "44--50"}
+	
+@article{LiSS06,
+	author = "Xiaojun Lin and Ness B. Shroff and R. Srikant",
+	title = "A tutorial on cross-layer optimization in wireless networks",
+	journal = JSAC,
+	volume = 24,
+	number = 8,
+	year = 2006,
+	pages = "1452--1463"}
+	
+@article{KsNG06,
+	author = "Adlen Ksentini and Mohamed Naimi and Abdelhak Gu\'{e}roui",
+	title = "Toward an Improvement of {H}.264 Video Transmission over {IEEE} 802.11e through a Cross-Layer Architecture",
+	journal = COMMAG,
+	volume = 44,
+	number = 1,
+	year = 2006,
+	pages = "107--114"}
+
+@article{WiNR09,
+	author = "Thomas Wiegand and Ludovic Noblet and Fabrizio Rovati",
+	title = "Scalable Video Coding for {IPTV} Services",
+	journal = BC,
+	volume = 55,
+	number = 2,
+	year = 2009,
+	pages = "527--538"
+}
+
+@article{ScMW07,
+	author = "Heiko Schwarz and Detlev Marpe and Thomas Wiegand",
+	title = "Overview of the Scalable Video Coding Extension of the {H}.264/{AVC} Standard",
+	journal = TCSVT,
+	volume = 17,
+	number = 9,
+	year = 2007,
+	pages = "1103--1120"
+}
+
+@article{JuFJ09,
+	author = "Dan Jurca and Pascal Frossard and Aleksandar Jovanovic",
+	title = "Forward Error Correction for Multipath Media Streaming",
+	journal = TCSVT,
+	volume = 19,
+	number = 9,
+	year = 2009,
+	pages = "1315--1326"
+}
+
+@article{LuSW08,
+	author = "M. Luby and T. Stockhammer and M. Watson",
+	title = "Application Layer FEC in IPTV Services",
+	journal = COMMAG,
+	volume = 46,
+	number = 5,
+	year = 2008,
+	pages = "94--101"
+}
+
+@article{FHSZ13,
+	author = "Nikolaos M. Freris and Cheng-Hsin Hsu and Jatinder Pal Singh and Xiaoqing Zhu",
+	title = "Distortion-Aware Scalable Video Streaming to Multinetwork Clients",
+	journal = "IEEE/ACM Trans. on Networking",
+	volume = 21,
+	number = 2,
+	year = 2013,
+	pages = "469--481"
+}
+
+@article{XiXC14,
+	author = "Min Xing and Siyuan Xiang and Lin Cai",
+	title = "A Real-Time Adaptive Algorithm for Video Streaming over Multiple Wireless Access Networks",
+	journal = JSAC,
+	volume = 32,
+	number = 4,
+	year = 2014,
+	pages = "795--805"
+}
+
+@article{MXOW12,
+	author = "Zhan Ma and Meng Xu and Yen-Fu Ou and Yao Wang",
+	title = "Modeling of rate and perceptual quality of compressed video as functions of frame rate and quantization stepsize and its applications",
+	journal = TCSVT,
+	volume = 22,
+	number = 5,
+	year = 2012,
+	pages = "671--682"
+}
+
+@article{CHLC15,
+	author = "Xiang Chen and Jenq-Neng Hwang and Chung-Nan Lee and Shih-I Chen",
+	title = "A Near Optimal {QoE}-Driven Power Allocation Scheme for Scalable Video Transmissions over {MIMO} Systems",
+	journal = JSTSP,
+	volume = 9,
+	number = 1,
+	year = 2015,
+	pages = "76--88"
+	}
+
+
+
+
+
+@inproceedings{DBPK09,
+  author =       "Andrea Detti and Giuseppe Bianchi and Claudio Pisa and Wolfgang Kellerer and Srisakul Thakolsri and Joerg Widmer",
+  title =        "SVEF: an open-source experimental evaluation framework for {H}.264 scalable video streaming",
+  booktitle =    "Proc. of IEEE Symp. on Computers and Communications",
+  address =      "Sousse",
+  page =         "36--41",
+  month =        "July 5-8",
+  year =         "2009"
+}
+
+@inproceedings{CDHR15,
+  author =       "Xiang Chen and Haiqing Du and Jenq-Neng Hwang and James A. Ritcey and Chung-Nan Lee",
+  title =        "A {QoE}-Driven {FEC} Rate Adaptation Scheme for Scalable Video Transmissions over {MIMO} Systems",
+  booktitle =    ICC,
+  address =      "London, UK",
+  month =        "June 8-12",
+  year =         "2015"
+}
+
+
+
+@Patent{PaKa94,
+author = "Arogyaswami J. Paulraj and Thomas Kailath",
+title = "Increasing capacity in wireless broadcast systems using distributed transmission/directional reception",
+number = "US 5345599"
+year = "1994"
+}
+
+@ARTICLE{WaSL12, 
+author="M. Watson and T. Stockhammer and M. Luby", 
+journal={IEEE Std. 802.16-2009}, 
+title={{RFC 6681: Raptor Forward Error Correction (FEC) Schemes for FECFRAME}}, 
+year={2012} 
+}
+ 
+@misc{ns3,
+  title = {{The Network Simulator 3 (NS-3)}},
+  howpublished = "\url{http://www.nsnam.org}", 
+  note = "[Online]"
+}
+ 
+ 
+ 

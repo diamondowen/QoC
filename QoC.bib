@@ -1,0 +1,342 @@
+ 
+Bibtex (bib) file for the thesis style document.
+
+% last modified on 09/01/09 Fengzhong Qu
+the key to a bib entry is generated according to the following rules
+ 1. Four letters plus 2 digits
+ 2. The 2 digits are for the publication year.
+ 3. The four letters come from the name(s) of author(s):
+    . if there is only one author - the first four letters of last name
+        If the last name is less than 4 letters, use first name.
+        for example, Gia, John -> GiaJ
+    . if there are two authors - two from each author's last name
+        example "First Author and Second A. Uthor" ->AuUt
+    . if there are three authors - two from the first's last name,
+        and one from others' last
+    . if there are four authors - one from each's last name
+    . if there are more than four authors, use only the first four.
+    . if two papers have the same key, please use a, b to distinguish them
+Example: "Jack London and John Bull" in 1995 -> LoBu95
+
+@string{COM="IEEE Trans. on Communications"}
+@string{SP="IEEE Trans. on Signal Processing"}
+@string{IT="IEEE Trans. on Information Theory"}
+@string{COML="IEEE Communications Letters"}
+@string{SPL="IEEE Signal Processing Letters"}
+@string{VT="IEEE Trans. on Vehicular Tech."}
+@string{BC="IEEE Trans. on Broadcasting"}
+@string{WCOM="IEEE Trans. on Wireless Communications"}
+@string{COMMAG="IEEE Communications Magazine"}
+@string{SPMAG="IEEE Signal Processing Magazine"}
+@string{JSAC="IEEE Journal on Selected Areas in Communications"}
+@string{PROCIEEE="Proc. of the IEEE"}
+@string{IEICE="IEICE Trans. on Communications"}
+@string{JVCIR="Journal of Visual Communication and Image Representation"}
+@string{Network="IEEE Network"}
+@string{TCSVT="IEEE Trans. on Circuits and Systems for Video Technology"}
+@string{PIEEE="Proceedings of the IEEE"}
+@string{IP="IEEE Trans. on Image Processing}
+@string{SPIC="Signal Processing: Image Communication"}
+@string{WPC="Wireless Personal Communications"}
+@string{TMC="IEEE Trans. on Mobile Computing"}
+@string{CC="Computer Communications"}
+@string{JSTSP="IEEE Journal of Selected Topics in Signal Processing"}
+
+
+@string{ICC="Proc. of IEEE Intl. Conf. on Communications"}
+@string{ISIT="Proc. of IEEE Intl. Symp. on Information Theory"}
+@string{GLOBECOM="Proc. of IEEE Global Telecommunications Conf."}
+@string{VTC="Proc. of IEEE Vehicular Technology Conf."}
+@string{ICASSP="Proc. of IEEE Intl. Conf. on Acoustics, Speech, and Signal Processing (ICASSP)"}
+@String{MILCOM = "Proc. of MILCOM Conf."}
+@String{WCNC = "Proc. of IEEE Wireless Communications and Networking Conf."}
+@String{WCN = "Proc. of Intl. Conf. on Mobile Computing and Networking."}
+@String{ISCAS = "Proc. of IEEE Intl. Symp. on Circuits and Systems"}
+@String{ICME = "Proc. of IEEE Intl. Conf. on Multimedia and Expo"}
+@String{CVPR = "Proc. of IEEE Computer Society Conf. on Computer Vision and Pattern Recognition (CVPR)"}
+
+
+
+@string{jan="January"}
+@string{feb="February"}
+@string{mar="March"}
+@string{apr="April"}
+@string{may="May"}
+@string{jun="June"}
+@string{jul="July"}
+@string{aug="August"}
+@string{sep="September"}
+@string{oct="October"}
+@string{nov="November"}
+@string{dec="December"}
+   
+@ARTICLE{Cisco, 
+author={}, 
+journal={}, 
+title={{Cisco Visual Networking Index : Forecast and Methodology, 2014-2019}}, 
+year={2015} 
+}
+
+@book{Hwan09,
+	author = "Jenq-Neng Hwang",
+	title = "Multimedia Networking: From Theory to Practice",
+	publisher = "Cambridge University Press", 
+	year = 2009}
+@book{BoVa04,
+	author = "S{tephen} Boyd and L{ieven} Vandenberghe",
+	title = "Convex Optimization",
+	publisher = "Cambridge University Press",
+	year = 2004}
+	
+@article{CHRL15,
+  author = "Xiang Chen and Jenq-Neng Hwang and James A. Ritcey and Chung-Nan Lee",
+  title = "Quality-Driven Joint Rate and Power Adaptation for Scalable Video Transmissions over {MIMO} Systems",
+  journal = "submitted to IEEE Trans. on Circuits and Systems for Video Technologies",
+  year = 2015,
+ }
+ 
+ @article{CHLC15,
+ 	author = "Xiang Chen and Jenq-Neng Hwang and Chung-Nan Lee and Shih-I Chen",
+ 	title = "A Near Optimal {QoE}-Driven Power Allocation Scheme for Scalable Video Transmissions over {MIMO} Systems",
+ 	journal = JSTSP,
+ 	volume = 9,
+ 	number = 1,
+ 	year = 2015,
+ 	pages = "76--88",
+ 	}
+ @article{WHHP14,
+ 	author = "Po-Han Wu and Chih-Wei Huang and Jenq-Neng Hwang and Jae-young Pyun and J. Zhang",
+ 	title = "Video-Quality-Driven Resource Allocation for Real-Time Surveillance Video Uplinking over {OFDMA}-based Wireless Networks",
+ 	journal = VT,
+ 	year = 2014,
+ }
+ @article{MaHT10,
+   title={A generic quantitative relationship between quality of experience and quality of service},
+   author={Fiedler, Markus and Hossfeld, Tobias and Tran-Gia, Phuoc},
+   journal={Network, IEEE},
+   volume={24},
+   number={2},
+   pages={36--41},
+   year={2010},
+   publisher={IEEE}
+ }
+ @article{MSSB10,
+   title={Wireless video quality assessment: A study of subjective scores and objective algorithms},
+   author={Moorthy, Anush K and Seshadrinathan, Kalpana and Soundararajan, Rajiv and Bovik, Alan Conrad},
+   journal={Circuits and Systems for Video Technology, IEEE Transactions on},
+   volume={20},
+   number={4},
+   pages={587--599},
+   year={2010},
+   publisher={IEEE}
+ }
+ @article{LeHC15,
+  	author = "Kuan-Hui Lee and Jenq-Neng Hwang and Shih-I Chen",
+  	title = "Model-Based Vehicle Localization Based on Three-Dimensional Constrained Multiple-Kernel Tracking",
+  	journal = TCSVT,
+  	volume = 25,
+  	number = 1,
+  	year = 2015,
+  	pages = "38--50",
+  	}
+  @article{CHWT15,
+   	author = "Meng-Che Chuang and Jenq-Neng Hwang and Kresimir Willianms and Richard Towler",
+   	title = "Tracking Live Fish from Low-Contrast and Low-Frame-Rate Stereo Videos",
+   	journal = TCSVT,
+   	volume = 25,
+   	number = 1,
+   	year = 2015,
+   	pages = "167--179",
+   	}
+   @article{FGMR10,
+     title={Object detection with discriminatively trained part-based models},
+     author={Felzenszwalb, Pedro F and Girshick, Ross B and McAllester, David and Ramanan, Deva},
+     journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+     volume={32},
+     number={9},
+     pages={1627--1645},
+     year={2010},
+     publisher={IEEE}
+   }
+ @article{LeHw15,
+   author = "Kuan-Hui Lee and Jenq-Neng Hwang",
+   title = "On-Road Pedestrian Tracking Across Multiple Driving Recorders",
+   journal = "submitted to IEEE Trans. on Multimedia",
+   year = 2015,
+  }
+  @article{SOHW12,
+    title="Overview of the high efficiency video coding ({HEVC}) standard",
+    author={Sullivan, Gary J and Ohm, J-R and Han, Woo-Jin and Wiegand, Thomas},
+    journal=TCSVT,
+    volume={22},
+    number={12},
+    pages={1649--1668},
+    year={2012},
+  }
+ @article{LeLS08,
+   title={Robust object detection with interleaved categorization and segmentation},
+   author={Leibe, Bastian and Leonardis, Ale{\v{s}} and Schiele, Bernt},
+   journal={International journal of computer vision},
+   volume={77},
+   number={1-3},
+   pages={259--289},
+   year={2008},
+   publisher={Springer}
+ }
+ @article{HOSC10,
+   title={Perceptual rate-distortion optimization using structural similarity index as quality metric},
+   author={Huang, Yi-Hsin and Ou, Tao-Sheng and Su, Po-Yen and Chen, Homer H},
+   journal=TCSVT,
+   volume={20},
+   number={11},
+   pages={1614--1624},
+   year={2010},
+ }
+ @article{EhHa12,
+   title="A survey on energy-efficient routing techniques with {QoS} assurances for wireless multimedia sensor networks",
+   author={Ehsan, Samina and Hamdaoui, Bechir},
+   journal={IEEE Communications Surveys \& Tutorials},
+   volume={14},
+   number={2},
+   pages={265--278},
+   year={2012}
+ }
+ 
+ @article{KPKG15,
+   title="{QoS}-Optimized Adaptive Multi-layer ({OQAM}) architecture of wireless network for high quality digital video transmission",
+   author={Koli, SM and Purandare, RG and Kshirsagar, SP and Gohokar, VV},
+   journal={Journal of Visual Communication and Image Representation},
+   volume={26},
+   pages={210--221},
+   year={2015},
+   publisher={Elsevier}
+ }
+ 
+ @article{YaFA15,
+   title="{QoE} Enhancement of {SVC} Video Streaming Over Vehicular Networks Using Cooperative {LTE/802.11 p} Communications",
+   author={Yaacoub, Elias and Filali, Fethi and Abu-Dayya, Adnan},
+   journal=JSTSP,
+   volume={9},
+   number={1},
+   pages={37--49},
+   year={2015}
+ }
+ 
+ @article{AtIM10,
+   title="The {I}nternet of things: A survey",
+   author={Atzori, Luigi and Iera, Antonio and Morabito, Giacomo},
+   journal={Computer networks},
+   volume={54},
+   number={15},
+   pages={2787--2805},
+   year={2010},
+   publisher={Elsevier}
+ }
+ @article{GBMP13,
+   title="Internet of Things ({IoT}): A vision, architectural elements, and future directions",
+   author={Gubbi, Jayavardhana and Buyya, Rajkumar and Marusic, Slaven and Palaniswami, Marimuthu},
+   journal={Future Generation Computer Systems},
+   volume={29},
+   number={7},
+   pages={1645--1660},
+   year={2013},
+   publisher={Elsevier}
+ }
+ 
+ @article{ChHw14,
+   title={Fully unsupervised learning of camera link models for tracking humans across nonoverlapping cameras},
+   author={Chu, Chun-Te and Hwang, Jenq-Neng},
+   journal=TCSVT,
+   volume={24},
+   number={6},
+   pages={979--994},
+   year={2014}
+ }
+ @article{WSHZ13,
+   title={Joint source-channel coding and optimization for mobile video streaming in heterogeneous wireless networks},
+   author={Wu, Jiyan and Shang, Yanlei and Huang, Jun and Zhang, Xue and Cheng, Bo and Chen, Junliang},
+   journal={EURASIP Journal on Wireless Communications and Networking},
+   volume={2013},
+   number={1},
+   pages={1--16},
+   year={2013},
+   publisher={Springer}
+ }
+ 
+ @article{BaTO08,
+   title={Slice sorting for unequal loss protection of video streams},
+   author={Baccaglini, Enrico and Tillo, Tammam and Olmo, Gabriella},
+   journal={Signal Processing Letters, IEEE},
+   volume={15},
+   pages={581--584},
+   year={2008},
+   publisher={IEEE}
+ }
+
+
+  
+  
+  @inproceedings{MiBR13,
+    title={A saliency-based rate control for people detection in video},
+    author={Milani, Simone and Bernardini, Riccardo and Rinaldo, Roberto},
+    booktitle=ICASSP,
+    pages={2016--2020},
+    year={2013}
+  }
+  @inproceedings{DaTr05,
+    title={Histograms of oriented gradients for human detection},
+    author={Dalal, Navneet and Triggs, Bill},
+    booktitle=CVPR,
+    pages={886--893},
+    year={2005},
+    organization={IEEE}
+  }
+  @inproceedings{ELSG08,
+    title={A mobile vision system for robust multi-person tracking},
+    author={Ess, Andreas and Leibe, Bastian and Schindler, Konrad and Gool, Luc Van},
+    booktitle=CVPR,
+    pages={1--8},
+    year={2008}
+  }
+  
+  @inproceedings{LHOP14,
+      title="Driving Recorder Based On-Road Pedestrian Tracking Using Visual {SLAM} and Constrained Multiple-Kernel",
+      author="Kuan-Hui Lee and Jenq-Neng Hwang and G. Okopal and J. Pitton",
+      booktitle="Proc. IEEE International Conf. Intelligent Transportation System (ITSC)",
+      pages={2629--2635},
+      year={2014}
+    }
+	@inproceedings{HWLH15,
+	  title="Deformable Multiple-Kernel Based Human Tracking Using a Moving Camera",
+	  author="L. Hou and W. Wan and Kuan-Hui Lee and Jenq-Neng Hwang and G. Okopal and J. Pitton",
+	  booktitle=ICASSP,
+	  year={2015}
+	}
+	@inproceedings{CHLQ15,
+	 title="Quality-of-Content ({QoC})-Driven Rate Allocation for Video Analysis in Mobile Surveillance Networks",
+	 author="Xiang Chen and Jenq-Neng Hwang and Kuan-Hui Lee and Ricardo L. de Queiroz",
+	 booktitle="IEEE International Workshop on Multimedia Signal Processing",
+	 year={2015}
+	}
+
+
+@Online{X265,
+	title = "The {X265} website. [{O}nline]. {A}vailable at  http://bitbucket.org/multicoreware/x265/wiki/Home"
+
+}
+@Online{CVX,
+	author="M. Grant and S. Boyd",
+	title = "{CVX}: {MATLAB} software for disciplined convex programming. [{O}nline]. {A}vailable at \url{http://stanford.edu/~boyd/cvx}"
+	year = {2008}
+}
+
+ @incollection{SHJE13,
+   title={From packets to people: quality of experience as a new measurement challenge},
+   author={Schatz, Raimund and Ho{\ss}feld, Tobias and Janowski, Lucjan and Egger, Sebastian},
+   booktitle={Data traffic monitoring and analysis},
+   pages={219--263},
+   year={2013},
+   publisher={Springer}
+ }
+
+   
