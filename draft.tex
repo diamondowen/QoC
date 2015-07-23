@@ -102,7 +102,8 @@ $c_m^{\left(1\right)}, c_m^{\left(2\right)}$ & Parameters in QP-rate model of th
 $r_m^{\left(\text{S}\right)}$ & Source coding rate target of the mobile node $m$ \\ \hline
 $r_m^{\left(\text{B}\right)}$ & Transmission data rate target of the mobile node $m$ \\ \hline
 $c_m^{\left(3\right)}$, $c_m^{\left(4\right)}$ & Parameters in a rate-distortion model of the MSE-driven rate allocation scheme in the control group. \\ \hline
-$d_m\left(\cdot\right)$ & Distortion measured by the MSE in a rate-distortion model of the MSE-driven rate allocation scheme in the control group. \\
+$d_m\left(\cdot\right)$ & Distortion measured by the MSE in a rate-distortion model of the MSE-driven rate allocation scheme in the control group. \\ \hline
+$P^{\left(\text{req}\right)}$ & FEC block correction rate requirement of the MSE-driven rate allocation scheme in the control group. \\
 
 \hline
 \end{tabular}
@@ -271,12 +272,14 @@ d_m\left(r\right)=c_m^{\left(3\right)}r^{c_m^{\left(4\right)}},
 where $d_m\left(r\right)$ is the distortion in terms of MSE for the mobile node $m$. $c_m^{\left(3\right)}$ and $c_m^{\left(4\right)}$ are two parameters to be determined by curve-fitting. The MSE-driven rate allocation problem is expressed as:
 \begin{equation}
 \begin{array}{rl}
-\min_{\mathbf{r}} &\sum_{m=1}^{M}d_m\left(r\right) \\
-\text{subject to} & \sum\limits_{m=1}^{M}r_m\leq R^{\left(\text{T}\right)}\\
-& r_m \geq R^{\left(\min\right)}, \forall m.
+\min_{\mathbf{\tilde{k}},\mathbf{\tilde{n}}} &\sum_{m=1}^{M}d_m\left(\frac{\tilde{k}^2_m \cdot S}{T^{\left(\text{GoP}\right)}}\right) \\
+\text{subject to} & \sum\limits_{m=1}^{M}\tilde{n}^2_m\leq \frac{R^{\left(\text{T}\right)}T^{\left(\text{GoP}\right)}}{S}\\
+& \tilde{k}_m \geq \sqrt{\frac{R^{\left(\min\right)}T^{\left(\text{GoP}\right)}}{S}}, \forall m, \\
+& \tilde{n}_m \geq \tilde{k}_m, \forall m \\
+& \log\Phi\left(\frac{\tilde{n}_m\left(1-p_m\right)-\frac{\tilde{k}_m^2}{\tilde{n}_m}}{\sqrt{p_m\left(1-p_m\right)}}\right) \geq \log(P^{\left(\text{req}\right)}), \forall m,
 \end{array}
 \end{equation}
-The minimum data rate requirement $R^{\left(\min\right)}$ in our proposed scheme and the MSE-driven rate allocation scheme are both set as $200$ Kbps.
+where $P^{\left(\text{req}\right)}$ is a pre-defined BCR requirement, which is set as $0.99$ \cite{WSHZ13} in this paper. The minimum data rate requirement $R^{\left(\min\right)}$ in our proposed scheme and the MSE-driven rate allocation scheme are both set as $200$ Kbps.
 
 \begin{table}[t]
 \renewcommand{\arraystretch}{1.3}
