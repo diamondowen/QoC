@@ -234,7 +234,7 @@ By applying the APP-FEC BCR approximation in Eq. \eqref{eq: BCR_appx_final} and 
 \end{array}
 \end{array}
 \end{equation}
-which can be shown as a convex optimization problem \cite{BoVa04} (see Appendix A) and can be solved by convex optimization tools such as CVX \cite{CVX}. In the objective function of Eq. \eqref{eq:finalProblem}, the first line is for source coding rate allocation and the second line is for APP-FEC rate allocation. The rate allocation of each mobile node is also proportional to the number of detected people $N_m$, which replects the pedestrian density in the camera view of each mobile node. Note that the optimized solutions $\mathbf{k}^*$ and $\mathbf{n}^*$ do not need to be converted to integers since the source coding rate $r_m^{\left(\text{S}\right)}=k_m^*\cdot S/T^{\text{GoP}}$ and the transmission data rate $r_m^{\left(\text{B}\right)}=n_m^*\cdot S/T^{\text{GoP}}$ of the mobile node $m$ are the corresponding encoding targets for the next round, which may slightly different to the actural encoding rates due to the rate-control mechanism of the encoder.
+which can be shown as a convex optimization problem \cite{BoVa04} (see Appendix A) and can be solved by convex optimization tools such as CVX \cite{CVX}. In the objective function of Eq. \eqref{eq:finalProblem}, the first line is for source coding rate allocation and the second line is for APP-FEC rate allocation. The rate allocation of each mobile node is also proportional to the number of detected people $N_m$, which replects the pedestrian density in the camera view of each mobile node. Note that the optimized solutions $\mathbf{k}^*$ and $\mathbf{n}^*$ do not need to be converted to integers since the source coding rate $r_m^{\left(\text{S}\right)}=k_m^*\cdot S/T^{\left(\text{GoP}\right)}$ and the transmission data rate $r_m^{\left(\text{B}\right)}=n_m^*\cdot S/T^{\left(\text{GoP}\right)}$ of the mobile node $m$ are the corresponding encoding targets for the next round, which may slightly different to the actural encoding rates due to the rate-control mechanism of the encoder.
 
 \section{Simulation Results}
 In this section, the proposed QoC-driven rate allocation scheme is evaluated by plenty of simulations. In total four video clips are used to compete for the limited wireless resources: two videos ``LINTHESCHER" and ``LOEWENPLATZ" from the ETHZ data set \cite{ELSG08} and two videos recorded in the UW campus. Table \ref{Table: video} summarizes the resolutions and human densities of the four videos. HEVC (X265 implementation) \cite{X265} is used as the video encoder. The frame rate and GoP are set as $25$ fps and $16$ respectively for all the videos. Hence the GoP period ($T^{\left(\text{GoP}\right)}$) is $0.64$ s. The encoding pattern in each GoP block is one I-frame followed by $15$ P-frames. $25$ GoPs ($400$ frames) are simulated for each video. Figure \ref{fig:sampleFrames} shows the sample video frames of the four videos. The packet size ($S$) is set as $600$ bytes.
@@ -301,31 +301,35 @@ where $P^{\left(\text{req}\right)}$ is a pre-defined BCR requirement, which is s
 \end{table}
 
 
-\begin{figure}[t]
+\begin{figure}[tb]
 \centering{\epsfig{file=Fig/dataRateAdaptation_2800_1.eps,width=3.6in}}
 \caption{Instantaneous source coding data rate (Kbps) of each video under total transmission data rate: 2800 Kbps. Packet loss rate of each video is $1\%$.}\label{fig:inst_dataRate_2800_1}
 \end{figure}
-\begin{figure}[t]
+\begin{figure}[tb]
 \centering{\includegraphics[width=3.5 in]{Fig/humanDensityChange_1.pdf}}
 \caption{The sample frames of the video sequence ``LOEWENPLATZ" of different human densities. Left: a sample video frame of the $10^{\text{th}}$ GoP; Right: a sample video frame of the $12^{\text{th}}$ GoP.}
 \label{fig:humanDensityChange_1}
 \end{figure}
 
-In the first simulation scenario, the packet loss rates of all the testing video sequences are set as $1\%$. When the packet loss rates are fair among all the videos, the only cause of data rate allocations is either content or distortion for the proposed content-driven scheme or the traditional distortion-driven scheme respectively. Figure \ref{fig:inst_dataRate_2800_1} shows the instantaneous source coding data rate (Kbps) of each video when the total transmission data rate constraint is 2800 Kbps. For the proposed content-driven scheme, more source coding data rates are allocated to the videos with higher human densities. Note that the rate allocation algorithm of the proposed content-driven scheme depends on the detected human densities of the previous GoP. For instance, the data rate allocated to the video sequence ``LOEWENPLATZ" significantly increases from the $11^\text{th}$ GoP to the $13^\text{th}$ GoP. This is because of the increasing of detected human densities as illustrated in Fig. \ref{fig:humanDensityChange_1}. For the distortion-driven scheme, more data rate is allocated to the video sequence with more image details (i.e., UW 1).
-
-Figure \ref{fig:avg_dataRate_1} shows the average source coding data rate (Kbps) of each video sequence under different transmission data rate constraints. It is obvious that more source coding data rates are allocated to all the video sequences. For the proposed content-driven scheme, the data increasing rates (slopes) of the videos with higher human densities are higher than those with less human densities. For the distortion-driven scheme, the data increasing rates do not depend on the human densities. As shown in Fig. \ref{fig:avg_fec_redundancy_rate_1}, more data rates are allocated to APP-FEC redundancies for better protections of the transmitted videos when the overall transmission data rate constraints are increasing. Similar as the source coding rate allocation, the proposed content-driven scheme allocates more FEC protections to the videos with more human densities, while the distortion-driven scheme does not. The APP-FEC rate of an $\left(n,k\right)$ code is defined as the $k/n$. The average APP-FEC rates of each video under different total transmission data rate constraints are plotted in Fig. \ref{fig:avg_fec_rate_1}. Most of the FEC rates are slightly increasing when more data rate is available for transmissions since the increasing rates of source coding rates are higher than that of the APP-FEC redundancies. However, for the proposed content-driven scheme, the APP-FEC rate of the video sequence ``UW 1" is decreasing, which is due to the fact that few source coding data rate is allocated even when more total data rate is available (shown in Fig. \ref{fig:avg_dataRate_1}) because of the few human densities of the video scene.
-
-
-
-
-\begin{figure}[t]
+\begin{figure}[tb]
 \centering{\epsfig{file=Fig/averagSourceCodingRate_1.eps,width=3.6in}}
 \caption{Average source coding data rate (Kbps) of each video under different transmission data rate constraints. Packet loss rate of each video is $1\%$.}\label{fig:avg_dataRate_1}
 \end{figure}
 
+
+
+In the first simulation scenario, the packet loss rates of all the testing video sequences are set as $1\%$. When the packet loss rates are fair among all the videos, the only cause of data rate allocations is either content or distortion for the proposed content-driven scheme or the traditional distortion-driven scheme respectively. Figure \ref{fig:inst_dataRate_2800_1} shows the instantaneous source coding data rate (Kbps) of each video when the total transmission data rate constraint is 2800 Kbps. For the proposed content-driven scheme, more source coding data rates are allocated to the videos with higher human densities. Note that the rate allocation algorithm of the proposed content-driven scheme depends on the detected human densities of the previous GoP. For instance, the data rate allocated to the video sequence ``LOEWENPLATZ" significantly increases from the $11^\text{th}$ GoP to the $13^\text{th}$ GoP. This is because of the increasing of detected human densities as illustrated in Fig. \ref{fig:humanDensityChange_1}. For the distortion-driven scheme, more data rate is allocated to the video sequence with more image details (i.e., UW 1).
+
+Figure \ref{fig:avg_dataRate_1} shows the average source coding data rate (Kbps) of each video sequence under different transmission data rate constraints. It is obvious that more source coding data rates are allocated to all the video sequences. For the proposed content-driven scheme, the data increasing rates (slopes) of the videos with higher human densities are higher than those with less human densities. For the distortion-driven scheme, the data increasing rates do not depend on the human densities. As shown in Fig. \ref{fig:avg_fec_redundancy_rate_1}, more data rates are allocated to APP-FEC redundancies for better protections of the transmitted videos when the overall transmission data rate constraints are increasing. Similar as the source coding rate allocation, the proposed content-driven scheme allocates more FEC protections to the videos with more human densities, while the distortion-driven scheme does not. The APP-FEC rate of an $\left(n,k\right)$ code is defined as the $k/n$. The average APP-FEC rates of each video under different total transmission data rate constraints are plotted in Fig. \ref{fig:avg_fec_rate_1}. Most of the FEC rates are slightly increasing when more data rate is available for transmissions since the increasing rates of source coding rates are higher than that of the APP-FEC redundancies. However, for the proposed content-driven scheme, the APP-FEC rate of the video sequence ``UW 1" is decreasing, which is due to the fact that few source coding data rate is allocated even when more total data rate is available (shown in Fig. \ref{fig:avg_dataRate_1}) because of the few human densities of the video scene.
+\clearpage
 \begin{figure}[t]
 \centering{\epsfig{file=Fig/averageFECRedundancyRate_1.eps,width=3.6in}}
 \caption{Average data rate (Kbps) of APP-FEC redundancy under different transmission data rate constraints. Packet loss rate of each video is $1\%$.}\label{fig:avg_fec_redundancy_rate_1}
+\end{figure}
+
+\begin{figure}[b]
+\centering{\epsfig{file=Fig/truePositiveProb_dataConstraint_1.eps,width=3.6in}}
+\caption{Average true-positive detection probability under different transmission data rate constraints. Packet loss rate of each video is $1\%$.}\label{fig:true_positive_1}
 \end{figure}
 
 \begin{figure}[t]
@@ -333,25 +337,52 @@ Figure \ref{fig:avg_dataRate_1} shows the average source coding data rate (Kbps)
 \caption{Average APP-FEC rate of each video under different transmission data rate constraints. Packet loss rate of each video is $1\%$.}\label{fig:avg_fec_rate_1}
 \end{figure}
 
-The average true-positive detection probability and the average false-alarm probability for each rate allocation scheme are plotted in Fig. \ref{fig:true_positive_1} and Fig. \ref{fig:false_alarm_1} respectively. Obviously, the proposed content-driven scheme more effectively allocates both of the source coding rate and the APP-FEC rate and can achive higher true-positive detection probability and less false-alarms.
 
-\begin{figure}[t]
-\centering{\epsfig{file=Fig/truePositiveProb_dataConstraint_1.eps,width=3.6in}}
-\caption{Average true-positive detection probability under different transmission data rate constraints. Packet loss rate of each video is $1\%$.}\label{fig:true_positive_1}
-\end{figure}
-
-\begin{figure}[t]
+\begin{figure}[b]
 \centering{\epsfig{file=Fig/falseAlarm_dataConstraint_1.eps,width=3.6in}}
 \caption{Average false-alarm probability under different transmission data rate constraints. Packet loss rate of each video is $1\%$.}\label{fig:false_alarm_1}
 \end{figure}
 
-In the second simulation scenario, the packet loss rates of the video sequences ``UW 1" and ``LOEWENPLATZ" are set as $3\%$ while that of the other two are set as $1\%$.
+\clearpage
+The average true-positive detection probability and the average false-alarm probability for each rate allocation scheme are plotted in Fig. \ref{fig:true_positive_1} and Fig. \ref{fig:false_alarm_1} respectively. Obviously, the proposed content-driven scheme more effectively allocates both of the source coding rate and the APP-FEC rate and can achive higher true-positive detection probability and less false-alarms.
 
+In the second simulation scenario, the packet loss rates of the video sequences ``UW 1" and ``LOEWENPLATZ" are set as $3\%$ while that of the other two are set as $1\%$. Figure \ref{fig:avg_dataRate_2} shows the source coding rates of each video. Still, the proposed scheme allocates more data rates to the videos with higher human densities. The average data rates of APP-FEC redundancy are plotted in Fig. \ref{fig:avg_fec_redundancy_rate_2}. For the proposed content-driven scheme, comparing to Fig. \ref{fig:avg_fec_redundancy_rate_1}, more APP-FEC redundancies are allocated to the video sequence ``LOEWENPLATZ", which has higher packet loss rate ($\%3$) than the other video sequences ($\%1$). However, the APP-FEC redundancies allocated to the video sequence ``UW 1" is not significantly increased even though its packet loss rate is also $\%3$. This is because the human density of ``UW 1" is low, and the proposed content-driven scheme allocates more data rates to the videos with more contents (i.e, human densities). Figure \ref{fig:avg_fec_rate_2} shows the average APP-FEC rate of each video. Note that the APP-FEC rate of the video sequence ``LOEWENPLATZ" is much lower than that in Fig. \ref{fig:avg_fec_rate_1} because more redundancies are allocated. The average true-positive detection probability and the false-alarm probability are plotted in Fig. \ref{fig:true_positive_2} and Fig. \ref{fig:false_alarm_2} respectively. Obviously, the proposed content-driven scheme has better performance than the other schemes. 
+
+
+\begin{figure}[b]
+\centering{\epsfig{file=Fig/averagSourceCodingRate_2.eps,width=3.6in}}
+\caption{Average source coding data rate (Kbps) of each video under different transmission data rate constraints. Packet loss rates of video ``UW 1" and ``LOEWENPLATZ" are $3\%$, and that of video ``UW 2" and ``LINTHESCHER" are $1\%$.}\label{fig:avg_dataRate_2}
+\end{figure}
+
+\begin{figure}[t]
+\centering{\epsfig{file=Fig/averageFECRedundancyRate_2.eps,width=3.6in}}
+\caption{Average data rate (Kbps) of APP-FEC redundancy under different transmission data rate constraints. Packet loss rates of video ``UW 1" and ``LOEWENPLATZ" are $3\%$, and that of video ``UW 2" and ``LINTHESCHER" are $1\%$.}\label{fig:avg_fec_redundancy_rate_2}
+\end{figure}
+
+\begin{figure}[t]
+\centering{\epsfig{file=Fig/averageFECRate_2.eps,width=3.6in}}
+\caption{Average APP-FEC rate of each video under different transmission data rate constraints. Packet loss rates of video ``UW 1" and ``LOEWENPLATZ" are $3\%$, and that of video ``UW 2" and ``LINTHESCHER" are $1\%$.}\label{fig:avg_fec_rate_2}
+\end{figure}
+
+
+\begin{figure}[t]
+\centering{\epsfig{file=Fig/truePositiveProb_dataConstraint_2.eps,width=3.6in}}
+\caption{Average true-positive detection probability under different transmission data rate constraints. Packet loss rates of video ``UW 1" and ``LOEWENPLATZ" are $3\%$, and that of video ``UW 2" and ``LINTHESCHER" are $1\%$.}\label{fig:true_positive_2}
+\end{figure}
+
+\begin{figure}[tb]
+\centering{\epsfig{file=Fig/falseAlarm_dataConstraint_2.eps,width=3.6in}}
+\caption{Average false-alarm probability under different transmission data rate constraints. Packet loss rates of video ``UW 1" and ``LOEWENPLATZ" are $3\%$, and that of video ``UW 2" and ``LINTHESCHER" are $1\%$.}\label{fig:false_alarm_2}
+\end{figure}
+
+\newpage
 \section{Conclusions and Future Work}
 In this paper, a QoC-driven joint source coding and APP-FEC rates allocation scheme for video analysis purposes in mobile surveillance network with multiple moving cameras is proposed. Different with the previous wireless video transmission studies, which focus on improving traditional QoS or QoE measures to meet the wireless network conditions or the users' perception satisfactions, the proposed scheme tries to optimize the wireless resource usage so that more accurate human detections can be performed at the cloud server based on the received videos. This study is conducted with HEVC video codecs and the DPM object detector. We have evaluated the human detection model with different QPs of the HEVC encoder. The APP-FEC is used for more reliable wireless data deliveries. Also, our proposed joint source encoding and APP-FEC rate allocation problem can be formulated as a convex optimization problem, which can be efficiently solved by standard solvers. Plenty of simulations with different pedestrain densities and wireless conditions show the effectiveness our proposed scheme and its favorable performance comparing with the equal rate allocation and MSE-driven rate allocation schemes.
 
 The proposed scheme only considers human detection as the video analytic purpose, which is the first step for more sophisticated systems such as human tracking, behavior understanding etc. Therefore, plenty of furture studies can be conducted in computer vision, video compression and video transmission areas. In computer vision area, more robust video analytic and computer graphics technologies, including object detection/tracking, pose and event recognitions, 3-D scene reconstructions etc., are required when video compression and transmission errors exist. In video compression area, traditional designs are for improving the rate-distortion properties so that more bit rate can be saved while keeping as much as the original video qualities. However, more efficient video compression schemes could be developed if video qualities can be much reduced while some specific useful features for video anayltic purposes are well kept. In wireless video transmission area, many transmission protocals and strategies can be re-evaluated if the video sequences are transmitted for video analytics rather than human perceptions.
 \appendices
+
+
 \section{Convexity of the Objective Problem in Eq. \eqref{eq:finalProblem}}
 For the first half of the objective function in Eq. \eqref{eq:finalProblem}, $q_m\left(.\right)$ is convex and non-increasing if $c_m^{\left(2\right)}\leq 0$. Therefore, $q_m\left(\tilde{k}_m^2\cdot S/T^{\left(\text{GoP}\right)}\right)$ is convex by the composition rule \cite{BoVa04}. Since $P\left(\cdot \right)$ is concave and decreasing, $P\left(q_m\left(\tilde{k}_m^2\cdot S/T^{\left(\text{GoP}\right)}\right)\right)$ is concave by the composition rule. Also, $\log\left(\cdot\right)$ is concave and increasing, $\log\left(P\left(q_m\left(\tilde{k}_m^2\cdot S/T^{\left(\text{GoP}\right)}\right)\right)\right)$ is therefore concave. For the second half of the objective function in Eq. \eqref{eq:finalProblem}, $g\left(\tilde{k}_m,\tilde{n}_m\right)=\tilde{k}^2_m/\tilde{n}_m$ is a quadratic-over-linear function, which is convex if $\tilde{n}_m>0$ \cite{BoVa04}. 
 \begin{equation}
